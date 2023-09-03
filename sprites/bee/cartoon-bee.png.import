@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0hnjx4kly5it"
-path="res://.godot/imported/Grass_05-128x128.png-36ee4ca15c1fbe86d1c1fcdc4e11d854.ctex"
+uid="uid://0h3yb12h8qt"
+path="res://.godot/imported/cartoon-bee.png-2c1ebadc2751762b8015cc7b2a9206c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Grass_05-128x128.png"
-dest_files=["res://.godot/imported/Grass_05-128x128.png-36ee4ca15c1fbe86d1c1fcdc4e11d854.ctex"]
+source_file="res://sprites/bee/cartoon-bee.png"
+dest_files=["res://.godot/imported/cartoon-bee.png-2c1ebadc2751762b8015cc7b2a9206c7.ctex"]
 
 [params]
 
