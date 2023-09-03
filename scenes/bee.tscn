@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://pwoqkhv1hq5i"]
+
+[ext_resource type="Texture2D" uid="uid://0h3yb12h8qt" path="res://assets/textures/cartoon-bee.png" id="1_dq5to"]
+[ext_resource type="Script" path="res://scripts/bee.gd" id="1_rya5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbel3"]
+size = Vector2(73, 48)
+
+[node name="Bee" type="CharacterBody2D"]
+script = ExtResource("1_rya5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dq5to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -6)
+shape = SubResource("RectangleShape2D_gbel3")
