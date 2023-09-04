@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwvxkf4phlye1"]
+[gd_scene load_steps=8 format=3 uid="uid://bwvxkf4phlye1"]
 
 [ext_resource type="PackedScene" uid="uid://b3y1c8dtgmkav" path="res://scenes/floor.tscn" id="1_qotjj"]
+[ext_resource type="Texture2D" uid="uid://djycned6dqx1" path="res://sprites/enviroment/Background_2.png" id="1_xtgmp"]
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
+[ext_resource type="Texture2D" uid="uid://h76c85jgwyca" path="res://sprites/enviroment/Background_1.png" id="2_wh8wq"]
 [ext_resource type="PackedScene" uid="uid://c0hwkjgkbc4fl" path="res://scenes/song_player.tscn" id="3_6plf2"]
+[ext_resource type="AudioStream" uid="uid://bgucyds7nt4ld" path="res://sound/song.mp3" id="6_d3onh"]
 
 [sub_resource type="GDScript" id="GDScript_47m2j"]
 script/source = "extends CharacterBody2D
@@ -38,26 +41,38 @@ func _physics_process(delta):
 [node name="Main" type="Node2D"]
 position = Vector2(386, 463)
 
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(190, -138.5)
+scale = Vector2(2.32258, 2.37132)
+texture = ExtResource("1_xtgmp")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(191, -138.5)
+scale = Vector2(2.31855, 2.37132)
+texture = ExtResource("2_wh8wq")
+
 [node name="Floor" parent="." instance=ExtResource("1_qotjj")]
+position = Vector2(5, 143)
 
 [node name="Floor2" parent="." instance=ExtResource("1_qotjj")]
-position = Vector2(128, 0)
+position = Vector2(133, 143)
 
 [node name="Floor3" parent="." instance=ExtResource("1_qotjj")]
-position = Vector2(-128, 0)
+position = Vector2(-123, 143)
 
 [node name="Floor4" parent="." instance=ExtResource("1_qotjj")]
-position = Vector2(256, 0)
+position = Vector2(261, 143)
 
 [node name="Floor5" parent="." instance=ExtResource("1_qotjj")]
-position = Vector2(384, 0)
+position = Vector2(389, 143)
 
 [node name="Floor6" parent="." instance=ExtResource("1_qotjj")]
-position = Vector2(512, 0)
+position = Vector2(517, 143)
 
 [node name="Bee" parent="." instance=ExtResource("2_dbqo5")]
-position = Vector2(35, -83)
+position = Vector2(11, 60)
 script = SubResource("GDScript_47m2j")
 
 [node name="SongPlayer" parent="." instance=ExtResource("3_6plf2")]
 position = Vector2(96, -216)
+stream = ExtResource("6_d3onh")
