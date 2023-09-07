@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
 [ext_resource type="Texture2D" uid="uid://h76c85jgwyca" path="res://sprites/enviroment/Background_1.png" id="2_wh8wq"]
 [ext_resource type="PackedScene" uid="uid://c0hwkjgkbc4fl" path="res://scenes/song_player.tscn" id="3_6plf2"]
-[ext_resource type="AudioStream" uid="uid://bgucyds7nt4ld" path="res://sound/song.mp3" id="6_d3onh"]
+[ext_resource type="AudioStream" uid="uid://bsbsawdwwci38" path="res://sound/aers.mp3" id="6_fit1a"]
 
 [sub_resource type="GDScript" id="GDScript_47m2j"]
 script/source = "extends CharacterBody2D
@@ -24,7 +24,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+	if Input.is_action_just_pressed(\"ui_accept\"): #and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -75,4 +75,4 @@ script = SubResource("GDScript_47m2j")
 
 [node name="SongPlayer" parent="." instance=ExtResource("3_6plf2")]
 position = Vector2(96, -216)
-stream = ExtResource("6_d3onh")
+stream = ExtResource("6_fit1a")

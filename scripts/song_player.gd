@@ -1,6 +1,6 @@
 extends AudioStreamPlayer2D
 
-var song = preload("res://sound/song.mp3")
+var song = preload("res://sound/aers.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
