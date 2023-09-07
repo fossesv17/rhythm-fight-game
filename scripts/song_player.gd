@@ -1,11 +1,10 @@
 extends AudioStreamPlayer2D
 
-@export var bpm := 161
+@export var bpm := 99
 var sec_per_beat = 60.0 / 60
 var song_pos = 0.0
 var ref_beat = 0
 var offset = 0
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
