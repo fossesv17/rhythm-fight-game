@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dow5n5papbw3f"]
+
+[ext_resource type="Texture2D" uid="uid://djycned6dqx1" path="res://sprites/enviroment/Background_2.png" id="1_pg88y"]
+[ext_resource type="Texture2D" uid="uid://h76c85jgwyca" path="res://sprites/enviroment/Background_1.png" id="2_oxlc2"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(190, -138.5)
+scale = Vector2(2.32258, 2.37132)
+texture = ExtResource("1_pg88y")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(191, -138.5)
+scale = Vector2(2.31855, 2.37132)
+texture = ExtResource("2_oxlc2")

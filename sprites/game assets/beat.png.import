@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wvr3tyj0g341"
-path="res://.godot/imported/beatBar.png-d0f2e63562cde11be336db8a344f2979.ctex"
+uid="uid://w85c7u83ieb5"
+path="res://.godot/imported/beat.png-06f9fbb874b7244c0b71b2f60016f926.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game assets/beatBar.png"
-dest_files=["res://.godot/imported/beatBar.png-d0f2e63562cde11be336db8a344f2979.ctex"]
+source_file="res://sprites/game assets/beat.png"
+dest_files=["res://.godot/imported/beat.png-06f9fbb874b7244c0b71b2f60016f926.ctex"]
 
 [params]
 

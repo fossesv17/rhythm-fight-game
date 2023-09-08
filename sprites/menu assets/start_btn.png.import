@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnjso5353u44k"
-path="res://.godot/imported/barrita.png-d23212d2a6e8d7073ef05ba1a9c1fa78.ctex"
+uid="uid://cyeiysovfv6h8"
+path="res://.godot/imported/start_btn.png-3c4c633f09b203982bd4bcfcd8e23337.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game assets/barrita.png"
-dest_files=["res://.godot/imported/barrita.png-d23212d2a6e8d7073ef05ba1a9c1fa78.ctex"]
+source_file="res://sprites/menu assets/start_btn.png"
+dest_files=["res://.godot/imported/start_btn.png-3c4c633f09b203982bd4bcfcd8e23337.ctex"]
 
 [params]
 

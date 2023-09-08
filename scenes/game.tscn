@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bwvxkf4phlye1"]
 
+[ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
 [ext_resource type="PackedScene" uid="uid://b3y1c8dtgmkav" path="res://scenes/floor.tscn" id="1_qotjj"]
-[ext_resource type="Texture2D" uid="uid://djycned6dqx1" path="res://sprites/enviroment/Background_2.png" id="1_xtgmp"]
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
-[ext_resource type="Texture2D" uid="uid://h76c85jgwyca" path="res://sprites/enviroment/Background_1.png" id="2_wh8wq"]
 [ext_resource type="PackedScene" uid="uid://c0hwkjgkbc4fl" path="res://scenes/song_player.tscn" id="3_6plf2"]
-[ext_resource type="Texture2D" uid="uid://bnjso5353u44k" path="res://sprites/game assets/barrita.png" id="3_o4j18"]
-[ext_resource type="Texture2D" uid="uid://wvr3tyj0g341" path="res://sprites/game assets/beatBar.png" id="4_0wk5v"]
+[ext_resource type="PackedScene" uid="uid://b66qe3237ugtw" path="res://scenes/beat.tscn" id="3_ovca6"]
+[ext_resource type="Script" path="res://scripts/beat.gd" id="4_2wg28"]
 [ext_resource type="AudioStream" uid="uid://bsbsawdwwci38" path="res://sound/aers.mp3" id="6_fit1a"]
+[ext_resource type="PackedScene" uid="uid://b27jc7nfsiavb" path="res://scenes/beat_bar.tscn" id="6_v2wsx"]
 
 [sub_resource type="GDScript" id="GDScript_47m2j"]
 script/source = "extends CharacterBody2D
@@ -43,27 +43,14 @@ func _physics_process(delta):
 [node name="Main" type="Node2D"]
 position = Vector2(386, 463)
 
-[node name="Background1" type="Sprite2D" parent="."]
-position = Vector2(190, -138.5)
-scale = Vector2(2.32258, 2.37132)
-texture = ExtResource("1_xtgmp")
+[node name="Background" parent="." instance=ExtResource("1_fndcf")]
 
-[node name="Background2" type="Sprite2D" parent="."]
-position = Vector2(191, -138.5)
-scale = Vector2(2.31855, 2.37132)
-texture = ExtResource("2_wh8wq")
+[node name="BeatBar" parent="." instance=ExtResource("6_v2wsx")]
+position = Vector2(40, -420)
 
-[node name="RhythmBar" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(174, -286.75)
-scale = Vector2(10.875, 8.73438)
-texture = ExtResource("3_o4j18")
-
-[node name="BeatBar" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(193, -333)
-scale = Vector2(18.0312, 6.1875)
-texture = ExtResource("4_0wk5v")
+[node name="Beat" parent="." instance=ExtResource("3_ovca6")]
+position = Vector2(73, -398)
+script = ExtResource("4_2wg28")
 
 [node name="Floor" parent="." instance=ExtResource("1_qotjj")]
 position = Vector2(5, 143)
