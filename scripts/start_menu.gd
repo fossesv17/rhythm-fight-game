@@ -7,7 +7,7 @@ var menu_pos = 0
 func _ready():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_start_btn_pressed():

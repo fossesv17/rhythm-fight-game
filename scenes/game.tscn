@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwvxkf4phlye1"]
+[gd_scene load_steps=11 format=3 uid="uid://bwvxkf4phlye1"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_0pp25"]
 [ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
 [ext_resource type="PackedScene" uid="uid://b3y1c8dtgmkav" path="res://scenes/floor.tscn" id="1_qotjj"]
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
@@ -42,6 +43,7 @@ func _physics_process(delta):
 
 [node name="Game" type="Node2D"]
 position = Vector2(386, 463)
+script = ExtResource("1_0pp25")
 
 [node name="Background" parent="." instance=ExtResource("1_fndcf")]
 
