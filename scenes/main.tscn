@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwvxkf4phlye1"]
+[gd_scene load_steps=9 format=3 uid="uid://bwvxkf4phlye1"]
 
 [ext_resource type="PackedScene" uid="uid://b3y1c8dtgmkav" path="res://scenes/floor.tscn" id="1_qotjj"]
 [ext_resource type="Texture2D" uid="uid://djycned6dqx1" path="res://sprites/enviroment/Background_2.png" id="1_xtgmp"]
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
 [ext_resource type="Texture2D" uid="uid://h76c85jgwyca" path="res://sprites/enviroment/Background_1.png" id="2_wh8wq"]
 [ext_resource type="PackedScene" uid="uid://c0hwkjgkbc4fl" path="res://scenes/song_player.tscn" id="3_6plf2"]
+[ext_resource type="Script" path="res://scripts/bee2.gd" id="5_qyl8o"]
 [ext_resource type="AudioStream" uid="uid://bsbsawdwwci38" path="res://sound/aers.mp3" id="6_fit1a"]
 
 [sub_resource type="GDScript" id="GDScript_47m2j"]
@@ -72,6 +73,10 @@ position = Vector2(517, 143)
 [node name="Bee" parent="." instance=ExtResource("2_dbqo5")]
 position = Vector2(11, 60)
 script = SubResource("GDScript_47m2j")
+
+[node name="Bee2" parent="." instance=ExtResource("2_dbqo5")]
+position = Vector2(312, 60)
+script = ExtResource("5_qyl8o")
 
 [node name="SongPlayer" parent="." instance=ExtResource("3_6plf2")]
 position = Vector2(96, -216)
