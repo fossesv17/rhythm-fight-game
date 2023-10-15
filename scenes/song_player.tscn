@@ -1,10 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0hwkjgkbc4fl"]
 
-[ext_resource type="AudioStream" uid="uid://c2ukl5epk14dj" path="res://sound/survival-epic.mp3" id="1_qob03"]
+[ext_resource type="AudioStream" uid="uid://dmh6vlybrdaqm" path="res://sound/Ergo Phizmiz and the Midnight Florists - Blue (Da Ba Dee).mp3" id="1_risol"]
 [ext_resource type="Script" path="res://scripts/song_player.gd" id="2_bn1w7"]
 
 [node name="SongPlayer" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_qob03")
+stream = ExtResource("1_risol")
 script = ExtResource("2_bn1w7")
 
 [node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

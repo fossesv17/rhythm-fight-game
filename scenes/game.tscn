@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwvxkf4phlye1"]
+[gd_scene load_steps=9 format=3 uid="uid://bwvxkf4phlye1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_0pp25"]
 [ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
 [ext_resource type="PackedScene" uid="uid://c0hwkjgkbc4fl" path="res://scenes/song_player.tscn" id="3_6plf2"]
 [ext_resource type="PackedScene" uid="uid://gxkrpxa1dh8w" path="res://scenes/beat_area.tscn" id="4_pwwsy"]
-[ext_resource type="AudioStream" uid="uid://bsbsawdwwci38" path="res://sound/aers.mp3" id="6_fit1a"]
-[ext_resource type="PackedScene" uid="uid://m4b4wl7p1k8l" path="res://scenes/beat_bar.tscn" id="8_0n5ic"]
+[ext_resource type="AudioStream" uid="uid://bxuen6k62vfgg" path="res://sound/HoliznaCC0 - Mutant Club.mp3" id="6_j4scs"]
 
 [sub_resource type="GDScript" id="GDScript_47m2j"]
 script/source = "extends CharacterBody2D
@@ -45,7 +44,7 @@ position = Vector2(386, 463)
 script = ExtResource("1_0pp25")
 
 [node name="Background" parent="." instance=ExtResource("1_fndcf")]
-position = Vector2(30, -7)
+position = Vector2(190, -140)
 
 [node name="Floor" parent="." instance=ExtResource("1_qotjj")]
 position = Vector2(5, 143)
@@ -66,14 +65,15 @@ position = Vector2(389, 143)
 position = Vector2(517, 143)
 
 [node name="BeatArea" parent="." instance=ExtResource("4_pwwsy")]
+position = Vector2(180, -270)
+
+[node name="SongPlayer" parent="." instance=ExtResource("3_6plf2")]
+position = Vector2(155, -65)
+stream = ExtResource("6_j4scs")
+bpm = 100
 
 [node name="Bee" parent="." instance=ExtResource("2_dbqo5")]
 position = Vector2(11, 60)
 script = SubResource("GDScript_47m2j")
 
-[node name="SongPlayer" parent="." instance=ExtResource("3_6plf2")]
-position = Vector2(155, -65)
-stream = ExtResource("6_fit1a")
-
-[node name="BeatBar" parent="." instance=ExtResource("8_0n5ic")]
-position = Vector2(400, -307)
+[connection signal="measuresig" from="SongPlayer" to="." method="_on_measure_sig"]

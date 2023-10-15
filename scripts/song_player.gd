@@ -4,7 +4,7 @@ extends AudioStreamPlayer2D
 @export var measures := 4
 
 # track song pos and beats
-var sec_per_beat = 60.0 / 60
+var sec_per_beat = 60.0 / bpm
 var song_pos = 0.0
 var song_pos_in_beats = 1
 var ref_beat = 0
@@ -20,7 +20,6 @@ signal measuresig(pos)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ref_beat = 0
 	sec_per_beat = 60.0 / bpm
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

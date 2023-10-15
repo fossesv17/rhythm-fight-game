@@ -11,11 +11,16 @@ height = 250.0
 script = ExtResource("1_cxdb8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-163.5, -39.5)
-scale = Vector2(0.361328, 0.382813)
+modulate = Color(0.784314, 0.631373, 0.0431373, 0.603922)
+position = Vector2(-0.5, 0)
+scale = Vector2(0.498047, 0.382813)
 texture = ExtResource("1_ph0bn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-164, -40)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_e6wyx")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

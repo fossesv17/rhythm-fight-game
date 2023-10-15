@@ -1,8 +1,8 @@
 extends Area2D
 
-var INIT_Y = -390
-var INIT_X = 72
-var TARGET_Y = -220
+var INIT_Y = -360
+var INIT_X = 181
+var TARGET_Y = -170
 var dist_to_target_area = abs(TARGET_Y - INIT_Y)
 
 
@@ -16,8 +16,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if position.y > TARGET_Y:
-		position.y = INIT_Y
+		destroy()
 	else:
 		position.y += speed * delta
-		print(position.y)
 
+
+func destroy():
+	$Sprite2D.visible = false
+	$Timer.start()
+	
+func _on_timer_timeout():
+	queue_free()

@@ -6,11 +6,9 @@
 [node name="Background" type="Node2D"]
 
 [node name="Background1" type="Sprite2D" parent="."]
-position = Vector2(190, -138.5)
 scale = Vector2(2.32258, 2.37132)
 texture = ExtResource("1_pg88y")
 
 [node name="Background2" type="Sprite2D" parent="."]
-position = Vector2(191, -138.5)
 scale = Vector2(2.31855, 2.37132)
 texture = ExtResource("2_oxlc2")
