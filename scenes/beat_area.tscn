@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://gxkrpxa1dh8w"]
+
+[ext_resource type="Texture2D" uid="uid://bfcqp4a7bqcym" path="res://sprites/game assets/beat_area1.png" id="1_amtol"]
+[ext_resource type="Script" path="res://scripts/beat_area.gd" id="1_tqbvw"]
+[ext_resource type="Texture2D" uid="uid://dcob0qru6d0f1" path="res://sprites/game assets/target_zone.png" id="2_kl065"]
+[ext_resource type="Texture2D" uid="uid://dp6naqnsnuwff" path="res://sprites/game assets/target_zone2.png" id="3_1y62o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqvj0"]
+size = Vector2(255, 236.803)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ev3sb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kl065")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1y62o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfou0"]
+radius = 58.0756
+height = 506.392
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hycyv"]
+radius = 31.1652
+height = 507.943
+
+[node name="BeatArea" type="Area2D"]
+script = ExtResource("1_tqbvw")
+
+[node name="Area" type="Sprite2D" parent="."]
+position = Vector2(238, -262)
+texture = ExtResource("1_amtol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(239.5, -262)
+scale = Vector2(1, 1.07262)
+shape = SubResource("RectangleShape2D_hqvj0")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(238.813, -190)
+scale = Vector2(0.49292, 0.449219)
+sprite_frames = SubResource("SpriteFrames_ev3sb")
+
+[node name="Good_Zone" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Good_Zone"]
+position = Vector2(-1.25366, -2.02875)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_pfou0")
+
+[node name="Perfect_Zone" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Perfect_Zone"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_hycyv")

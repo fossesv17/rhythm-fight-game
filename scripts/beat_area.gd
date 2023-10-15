@@ -1,11 +1,11 @@
-extends Node2D
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$SongPlayer.play_from_beat(0, 0) # Replace with function body.
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass

@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwvxkf4phlye1"]
+[gd_scene load_steps=10 format=3 uid="uid://bwvxkf4phlye1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_0pp25"]
 [ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
 [ext_resource type="PackedScene" uid="uid://b3y1c8dtgmkav" path="res://scenes/floor.tscn" id="1_qotjj"]
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
 [ext_resource type="PackedScene" uid="uid://c0hwkjgkbc4fl" path="res://scenes/song_player.tscn" id="3_6plf2"]
-[ext_resource type="PackedScene" uid="uid://b66qe3237ugtw" path="res://scenes/beat.tscn" id="3_ovca6"]
-[ext_resource type="Script" path="res://scripts/beat.gd" id="4_2wg28"]
+[ext_resource type="PackedScene" uid="uid://gxkrpxa1dh8w" path="res://scenes/beat_area.tscn" id="4_pwwsy"]
 [ext_resource type="AudioStream" uid="uid://bsbsawdwwci38" path="res://sound/aers.mp3" id="6_fit1a"]
-[ext_resource type="PackedScene" uid="uid://b27jc7nfsiavb" path="res://scenes/beat_bar.tscn" id="6_v2wsx"]
+[ext_resource type="PackedScene" uid="uid://m4b4wl7p1k8l" path="res://scenes/beat_bar.tscn" id="8_0n5ic"]
 
 [sub_resource type="GDScript" id="GDScript_47m2j"]
 script/source = "extends CharacterBody2D
@@ -46,13 +45,7 @@ position = Vector2(386, 463)
 script = ExtResource("1_0pp25")
 
 [node name="Background" parent="." instance=ExtResource("1_fndcf")]
-
-[node name="BeatBar" parent="." instance=ExtResource("6_v2wsx")]
-position = Vector2(40, -420)
-
-[node name="Beat" parent="." instance=ExtResource("3_ovca6")]
-position = Vector2(73, -398)
-script = ExtResource("4_2wg28")
+position = Vector2(30, -7)
 
 [node name="Floor" parent="." instance=ExtResource("1_qotjj")]
 position = Vector2(5, 143)
@@ -72,6 +65,8 @@ position = Vector2(389, 143)
 [node name="Floor6" parent="." instance=ExtResource("1_qotjj")]
 position = Vector2(517, 143)
 
+[node name="BeatArea" parent="." instance=ExtResource("4_pwwsy")]
+
 [node name="Bee" parent="." instance=ExtResource("2_dbqo5")]
 position = Vector2(11, 60)
 script = SubResource("GDScript_47m2j")
@@ -79,3 +74,6 @@ script = SubResource("GDScript_47m2j")
 [node name="SongPlayer" parent="." instance=ExtResource("3_6plf2")]
 position = Vector2(155, -65)
 stream = ExtResource("6_fit1a")
+
+[node name="BeatBar" parent="." instance=ExtResource("8_0n5ic")]
+position = Vector2(400, -307)

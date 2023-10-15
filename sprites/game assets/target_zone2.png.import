@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w85c7u83ieb5"
-path="res://.godot/imported/beat.png-06f9fbb874b7244c0b71b2f60016f926.ctex"
+uid="uid://dp6naqnsnuwff"
+path="res://.godot/imported/target_zone2.png-6fa115c440199e0630785ce19d4bed94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/game assets/beat.png"
-dest_files=["res://.godot/imported/beat.png-06f9fbb874b7244c0b71b2f60016f926.ctex"]
+source_file="res://sprites/game assets/target_zone2.png"
+dest_files=["res://.godot/imported/target_zone2.png-6fa115c440199e0630785ce19d4bed94.ctex"]
 
 [params]
 

@@ -15,8 +15,8 @@ var measure = 1
 var closest = 0
 var time_off_beat = 0.0
 
-signal beat(pos)
-signal meas(pos)
+signal beatsig(pos)
+signal measuresig(pos)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,8 +35,8 @@ func _report_beat():
 	if ref_beat < song_pos_in_beats:
 		if measures < measure:
 			measure = 1
-		emit_signal("beat", song_pos_in_beats)
-		emit_signal("meas", measure)
+		emit_signal("beatsig", song_pos_in_beats)
+		emit_signal("measuresig", measure)
 		ref_beat = song_pos_in_beats
 		measure += 1
 

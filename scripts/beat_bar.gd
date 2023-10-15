@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 var INIT_Y = -390
 var INIT_X = 72
@@ -19,4 +19,5 @@ func _physics_process(delta):
 		position.y = INIT_Y
 	else:
 		position.y += speed * delta
-		#print(position.y)
+		print(position.y)
+
