@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds4k1vy5m6yn1"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_duqak"]
+[ext_resource type="Texture2D" uid="uid://cyeiysovfv6h8" path="res://sprites/menu assets/start_btn.png" id="1_n7rf8"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_duqak")
+
+[node name="StartMenu" type="CenterContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.21
+anchor_top = 0.162
+anchor_right = 0.21
+anchor_bottom = 0.162
+offset_left = 212.0
+offset_top = 83.0
+offset_right = 353.0
+offset_bottom = 176.0
+scale = Vector2(5, 5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu"]
+layout_mode = 2
+
+[node name="StartBtn" type="TextureButton" parent="StartMenu/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("1_n7rf8")
+texture_pressed = ExtResource("1_n7rf8")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="StartMenu/VBoxContainer/StartBtn"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 71.0
+offset_bottom = 29.0
+text = "START"
+
+[node name="SettingsBtn" type="TextureButton" parent="StartMenu/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("1_n7rf8")
+texture_pressed = ExtResource("1_n7rf8")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="StartMenu/VBoxContainer/SettingsBtn"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 86.0
+offset_bottom = 29.0
+text = "SETTINGS"
+
+[connection signal="pressed" from="StartMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="StartMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]

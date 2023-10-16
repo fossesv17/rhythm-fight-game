@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxuen6k62vfgg"
+path="res://.godot/imported/HoliznaCC0 - Mutant Club.mp3-eeea8232c4ed4e64a71cf3e5892fe239.mp3str"
+
+[deps]
+
+source_file="res://sound/HoliznaCC0 - Mutant Club.mp3"
+dest_files=["res://.godot/imported/HoliznaCC0 - Mutant Club.mp3-eeea8232c4ed4e64a71cf3e5892fe239.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
