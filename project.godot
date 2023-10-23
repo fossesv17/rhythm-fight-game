@@ -88,6 +88,11 @@ p1_jump={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Caida"
+2d_physics/layer_2="PlA"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
