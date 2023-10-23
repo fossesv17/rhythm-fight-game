@@ -49,4 +49,5 @@ position = Vector2(11, 60)
 position = Vector2(377, 60)
 script = ExtResource("8_1l3y4")
 
+[connection signal="movebybeat" from="BeatArea" to="Bee" method="_process_input"]
 [connection signal="measuresig" from="SongPlayer" to="." method="_on_measure_sig"]
