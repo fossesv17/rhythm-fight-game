@@ -91,7 +91,8 @@ p1_jump={
 [layer_names]
 
 2d_physics/layer_1="Caida"
-2d_physics/layer_2="PlA"
+2d_physics/layer_2="Player1"
+2d_physics/layer_3="Player2"
 
 [rendering]
 

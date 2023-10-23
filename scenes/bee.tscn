@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ldu2l1njhyon" path="res://sprites/bee/bee_idle.png" id="3_78fnn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbel3"]
-size = Vector2(50.5, 63)
+size = Vector2(40, 63)
 
 [sub_resource type="Animation" id="Animation_vv0eo"]
 length = 0.45
@@ -183,7 +183,7 @@ texture = ExtResource("2_h52d4")
 hframes = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.75, -11)
+position = Vector2(-3, -11)
 shape = SubResource("RectangleShape2D_gbel3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
