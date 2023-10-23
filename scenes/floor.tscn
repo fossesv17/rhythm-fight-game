@@ -6,6 +6,7 @@
 size = Vector2(128, 128)
 
 [node name="Floor" type="StaticBody2D"]
+constant_linear_velocity = Vector2(-200, 0)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

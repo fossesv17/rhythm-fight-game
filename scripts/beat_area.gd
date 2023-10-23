@@ -5,7 +5,7 @@ var perfect = false
 var curr_note = null
 
 
-signal movebybeat(input)
+signal movebybeat
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,17 +20,19 @@ func _input(event):
 		$AnimatedSprite2D.frame = 1
 		$AnimatedSprite2D.self_modulate = Color(0.9, 0.77 ,0)
 		if perfect:
-			curr_note.queue_free()
+			if curr_note: 
+				curr_note.queue_free()
 			emit_signal("movebybeat")
 		elif good:
+			if curr_note: 
+				curr_note.queue_free()
 			emit_signal("movebybeat")
-			curr_note.queue_free()
 		else:
-			print("BRO U SUCK")
+			print("No Hit")
 	else:
 		$AnimatedSprite2D.frame = 0
 		$AnimatedSprite2D.self_modulate = Color(1, 1, 1)
-		print("BUH")
+		print("Manito se le paso")
 
 func _on_enter_good_zone(area):
 	if area.is_in_group("beatbar"):
