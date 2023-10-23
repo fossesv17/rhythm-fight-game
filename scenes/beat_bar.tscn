@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://uxvwmieen1kk" path="res://sprites/game assets/beat_bar.png" id="1_ph0bn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6wyx"]
-radius = 18.0
+radius = 9.0
 height = 250.0
 
-[node name="BeatBar" type="Area2D"]
+[node name="BeatBar" type="Area2D" groups=["beatbar"]]
 script = ExtResource("1_cxdb8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

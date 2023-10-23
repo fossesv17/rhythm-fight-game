@@ -12,7 +12,8 @@ var instance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$SongPlayer.play_with_offset(5) # Replace with function body.
-
+	#var curr_scene = get_tree().get_current_scene()
+	#print_scene_hierarchy(curr_scene, "")
 
 func _spawn_beatbar():
 	instance = beatbar.instantiate()
@@ -21,4 +22,10 @@ func _spawn_beatbar():
 func _on_measure_sig(_pos):
 	_spawn_beatbar()
 	
+func print_scene_hierarchy(node, indent):
+	# Print the node's name
+	print(indent + node.get_name())
 
+	# Recursively print child nodes
+	for child in node.get_children():
+		print_scene_hierarchy(child, indent + "  ")
