@@ -14,3 +14,7 @@ config/name="R&F"
 run/main_scene="res://scenes/start_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
