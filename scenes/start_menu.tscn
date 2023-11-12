@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds4k1vy5m6yn1"]
+[gd_scene load_steps=6 format=3 uid="uid://ds4k1vy5m6yn1"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_duqak"]
-[ext_resource type="Texture2D" uid="uid://cyeiysovfv6h8" path="res://sprites/menu assets/start_btn.png" id="1_n7rf8"]
+[ext_resource type="Texture2D" uid="uid://c0uc4mtikmfyk" path="res://sprites/enviroment/beehive_backg.png" id="2_4th7t"]
+[ext_resource type="Texture2D" uid="uid://tgvsbhiqr2h0" path="res://sprites/menu assets/start_btn2.png" id="3_bipga"]
+[ext_resource type="Texture2D" uid="uid://dn08egbo4w2b1" path="res://sprites/menu assets/start_btn3.png" id="4_hreqa"]
+[ext_resource type="Texture2D" uid="uid://bu2njogn4f35h" path="res://sprites/enviroment/bee.png" id="4_iy5ra"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_duqak")
+
+[node name="BeehiveBackg" type="Sprite2D" parent="."]
+position = Vector2(579, 329)
+scale = Vector2(2.17537, 2.19833)
+texture = ExtResource("2_4th7t")
 
 [node name="StartMenu" type="CenterContainer" parent="."]
 anchors_preset = -1
@@ -12,11 +20,11 @@ anchor_left = 0.21
 anchor_top = 0.162
 anchor_right = 0.21
 anchor_bottom = 0.162
-offset_left = 212.0
-offset_top = 83.0
-offset_right = 353.0
-offset_bottom = 176.0
-scale = Vector2(5, 5)
+offset_left = 460.0
+offset_top = 420.0
+offset_right = 556.0
+offset_bottom = 488.0
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu"]
 layout_mode = 2
@@ -24,8 +32,8 @@ layout_mode = 2
 [node name="StartBtn" type="TextureButton" parent="StartMenu/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("1_n7rf8")
-texture_pressed = ExtResource("1_n7rf8")
+texture_normal = ExtResource("3_bipga")
+texture_pressed = ExtResource("4_hreqa")
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="StartMenu/VBoxContainer/StartBtn"]
@@ -34,13 +42,14 @@ offset_left = 23.0
 offset_top = 3.0
 offset_right = 71.0
 offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "START"
 
 [node name="SettingsBtn" type="TextureButton" parent="StartMenu/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("1_n7rf8")
-texture_pressed = ExtResource("1_n7rf8")
+texture_normal = ExtResource("3_bipga")
+texture_pressed = ExtResource("4_hreqa")
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="StartMenu/VBoxContainer/SettingsBtn"]
@@ -49,7 +58,13 @@ offset_left = 12.0
 offset_top = 3.0
 offset_right = 86.0
 offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "SETTINGS"
+
+[node name="Bee" type="Sprite2D" parent="."]
+position = Vector2(568, 285)
+scale = Vector2(0.59875, 0.59875)
+texture = ExtResource("4_iy5ra")
 
 [connection signal="pressed" from="StartMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="StartMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
