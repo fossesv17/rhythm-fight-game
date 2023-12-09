@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://pwoqkhv1hq5i"]
 
 [ext_resource type="Script" path="res://scripts/bee.gd" id="1_rya5u"]
-[ext_resource type="Texture2D" uid="uid://c2c8la8kjl86n" path="res://sprites/bee/bee-walk.png" id="2_h52d4"]
-[ext_resource type="Texture2D" uid="uid://ldu2l1njhyon" path="res://sprites/bee/bee_idle.png" id="3_78fnn"]
+[ext_resource type="Texture2D" uid="uid://8and6w4hkcg2" path="res://sprites/bee/Abeja_idle_1.png" id="2_y3qia"]
+[ext_resource type="Texture2D" uid="uid://difragvuj7jpq" path="res://sprites/bee/Abeja_caminar.png" id="3_6e6qt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbel3"]
-size = Vector2(40, 63)
+size = Vector2(111, 137.5)
 
 [sub_resource type="Animation" id="Animation_vv0eo"]
 length = 0.45
@@ -13,85 +13,97 @@ step = 0.03
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BeeSprite:frame")
+tracks/0/path = NodePath("BeeSprite2:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.3, 0.33, 0.36, 0.39, 0.42),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+"values": [10]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BeeSprite:texture")
+tracks/1/path = NodePath("BeeSprite2:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_h52d4")]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BeeSprite:hframes")
+tracks/2/path = NodePath("BeeSprite2:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [15]
+"values": [ExtResource("2_y3qia")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BeeSprite:vframes")
+tracks/3/path = NodePath("BeeSprite2:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [Vector2i(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BeeSprite2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_fgwcr"]
 resource_name = "idle"
-length = 0.5
+length = 2.0
 loop_mode = 1
-step = 0.25
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BeeSprite:texture")
+tracks/0/path = NodePath("BeeSprite2:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_78fnn")]
+"values": [ExtResource("2_y3qia")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BeeSprite:hframes")
+tracks/1/path = NodePath("BeeSprite2:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [10]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BeeSprite:vframes")
+tracks/2/path = NodePath("BeeSprite2:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -103,67 +115,67 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BeeSprite:frame")
+tracks/3/path = NodePath("BeeSprite2:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(8, 0), Vector2i(9, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_32j8p"]
 resource_name = "walk"
-length = 0.45
-step = 0.03
+length = 1.2
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BeeSprite:frame")
+tracks/0/path = NodePath("BeeSprite2:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.3, 0.33, 0.36, 0.39, 0.42),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+"values": [ExtResource("3_6e6qt")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BeeSprite:texture")
+tracks/1/path = NodePath("BeeSprite2:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.45),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_h52d4")]
+"values": [6]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BeeSprite:hframes")
+tracks/2/path = NodePath("BeeSprite2:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.45),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [15]
+"values": [1]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BeeSprite:vframes")
+tracks/3/path = NodePath("BeeSprite2:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.45),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [1]
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67ul2"]
@@ -176,18 +188,18 @@ _data = {
 [node name="Bee" type="CharacterBody2D"]
 script = ExtResource("1_rya5u")
 
-[node name="BeeSprite" type="Sprite2D" parent="."]
-position = Vector2(2.38419e-07, -14)
-scale = Vector2(0.147461, 0.147461)
-texture = ExtResource("2_h52d4")
-hframes = 15
+[node name="BeeSprite2" type="Sprite2D" parent="."]
+position = Vector2(1, -45)
+scale = Vector2(0.936091, 0.936091)
+texture = ExtResource("2_y3qia")
+hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -11)
+position = Vector2(-1, -49)
 shape = SubResource("RectangleShape2D_gbel3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_67ul2")
 }
+autoplay = "idle"

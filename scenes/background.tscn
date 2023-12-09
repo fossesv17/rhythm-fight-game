@@ -1,14 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dow5n5papbw3f"]
+[gd_scene load_steps=5 format=3 uid="uid://dow5n5papbw3f"]
 
-[ext_resource type="Texture2D" uid="uid://djycned6dqx1" path="res://sprites/enviroment/Background_2.png" id="1_pg88y"]
-[ext_resource type="Texture2D" uid="uid://h76c85jgwyca" path="res://sprites/enviroment/Background_1.png" id="2_oxlc2"]
+[ext_resource type="Texture2D" uid="uid://dqhbmcfmnplc1" path="res://sprites/enviroment/Clouds/Clouds 1/1.png" id="1_qlo32"]
+[ext_resource type="Texture2D" uid="uid://iglpvc5kw8wu" path="res://sprites/enviroment/Clouds/Clouds 1/2.png" id="2_83frk"]
+[ext_resource type="Texture2D" uid="uid://lat20c5cftob" path="res://sprites/enviroment/Clouds/Clouds 1/3.png" id="3_v4080"]
+[ext_resource type="Texture2D" uid="uid://hiirhkbn8cs0" path="res://sprites/enviroment/Clouds/Clouds 1/4.png" id="4_lwnge"]
 
 [node name="Background" type="Node2D"]
+position = Vector2(585, -244)
+scale = Vector2(2, 2)
 
-[node name="Background1" type="Sprite2D" parent="."]
-scale = Vector2(2.32258, 2.37132)
-texture = ExtResource("1_pg88y")
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(-273.5, 223.5)
+scale = Vector2(2, 2)
+texture = ExtResource("1_qlo32")
 
-[node name="Background2" type="Sprite2D" parent="."]
-scale = Vector2(2.31855, 2.37132)
-texture = ExtResource("2_oxlc2")
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(-273.5, 223.5)
+scale = Vector2(2, 2)
+texture = ExtResource("2_83frk")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(-273.5, 223.5)
+scale = Vector2(2, 2)
+texture = ExtResource("3_v4080")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(-273.5, 223.5)
+scale = Vector2(2, 2)
+texture = ExtResource("4_lwnge")

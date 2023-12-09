@@ -34,11 +34,11 @@ func _process(delta):
 	var right = Input.is_action_pressed("p1_right")
 	var left = Input.is_action_pressed("p1_left")
 	if right:
-		$BeeSprite.flip_h = false
+		$BeeSprite2.flip_h = false
 		if is_on_floor():
 			animation.play("walk")
 	elif left: 	
-		$BeeSprite.flip_h = true
+		$BeeSprite2.flip_h = true
 		if is_on_floor():
 			animation.play("walk")
 	else: 
