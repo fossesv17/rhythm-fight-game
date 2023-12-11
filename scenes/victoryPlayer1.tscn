@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dr1otc0fd16cy"]
+
+[ext_resource type="Script" path="res://scenes/victoryPlayer1.gd" id="1_vw6lc"]
+[ext_resource type="Texture2D" uid="uid://dk7ftbi3u735p" path="res://sprites/enviroment/Clouds/Clouds 3/1.png" id="2_mce4v"]
+[ext_resource type="Texture2D" uid="uid://dkyyeuoxed1mq" path="res://sprites/enviroment/Clouds/Clouds 3/2.png" id="3_uhu4e"]
+[ext_resource type="Texture2D" uid="uid://cfvogn3q42n02" path="res://sprites/enviroment/Clouds/Clouds 3/3.png" id="4_1vpu7"]
+[ext_resource type="Texture2D" uid="uid://cqptu33dquiqx" path="res://sprites/enviroment/Clouds/Clouds 3/4.png" id="5_30t4l"]
+[ext_resource type="FontFile" uid="uid://bsrat8xbmhukr" path="res://assets/fonts/TrueType (.ttf)/Kaph-Regular.ttf" id="6_i42t6"]
+[ext_resource type="Texture2D" uid="uid://tgvsbhiqr2h0" path="res://sprites/menu assets/start_btn2.png" id="7_3i6qp"]
+[ext_resource type="Texture2D" uid="uid://dn08egbo4w2b1" path="res://sprites/menu assets/start_btn3.png" id="8_dqpiq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_42wwq"]
+font = ExtResource("6_i42t6")
+font_size = 100
+font_color = Color(1, 1, 0.254902, 1)
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfgxb"]
+font = ExtResource("6_i42t6")
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_vw6lc")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(578.5, 325.5)
+scale = Vector2(2.10243, 2.06481)
+texture = ExtResource("2_mce4v")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(578.5, 326)
+scale = Vector2(2.10243, 2.0679)
+texture = ExtResource("3_uhu4e")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(579, 324.5)
+scale = Vector2(2.10417, 2.05864)
+texture = ExtResource("4_1vpu7")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(580, 324.5)
+scale = Vector2(2.10764, 2.05864)
+texture = ExtResource("5_30t4l")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 170.0
+offset_right = 1082.0
+offset_bottom = 311.0
+text = "Player 1 Wins!"
+label_settings = SubResource("LabelSettings_42wwq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 450.0
+offset_top = 402.0
+offset_right = 546.0
+offset_bottom = 434.0
+scale = Vector2(3, 3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_3i6qp")
+texture_pressed = ExtResource("8_dqpiq")
+texture_hover = ExtResource("8_dqpiq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureButton"]
+layout_mode = 0
+offset_left = 10.3333
+offset_top = 9.66667
+offset_right = 118.333
+offset_bottom = 28.6667
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_bfgxb")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

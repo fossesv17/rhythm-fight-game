@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cceclu8jsainh"]
+[gd_scene load_steps=20 format=3 uid="uid://cceclu8jsainh"]
 
 [ext_resource type="Script" path="res://scenes/credits.gd" id="1_npdt8"]
 [ext_resource type="Texture2D" uid="uid://ci015fj0wcjur" path="res://sprites/enviroment/Clouds/Clouds 5/1.png" id="1_p25qx"]
@@ -8,6 +8,47 @@
 [ext_resource type="Texture2D" uid="uid://05a28g4kvdlm" path="res://sprites/enviroment/Clouds/Clouds 5/5.png" id="5_50jpt"]
 [ext_resource type="Texture2D" uid="uid://tgvsbhiqr2h0" path="res://sprites/menu assets/start_btn2.png" id="6_gguqb"]
 [ext_resource type="Texture2D" uid="uid://dn08egbo4w2b1" path="res://sprites/menu assets/start_btn3.png" id="7_qxgkr"]
+[ext_resource type="FontFile" uid="uid://bsrat8xbmhukr" path="res://assets/fonts/TrueType (.ttf)/Kaph-Regular.ttf" id="9_a4km4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3maa"]
+font = ExtResource("9_a4km4")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_er0rp"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_giadf"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_16cwo"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_stjyh"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vbjl3"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2cc8"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sifip"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uyoi8"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fth37"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Node2D"]
 position = Vector2(29, 22)
@@ -34,7 +75,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("4_3o04m")
 
 [node name="Background_5" type="Sprite2D" parent="."]
-position = Vector2(257, 140)
+position = Vector2(232, 146)
 scale = Vector2(5, 5)
 texture = ExtResource("5_50jpt")
 
@@ -63,5 +104,102 @@ offset_bottom = 31.0
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Go Back to Menu"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 407.0
+offset_top = 26.0
+offset_right = 679.0
+offset_bottom = 62.0
+text = "Bee-at Stars"
+label_settings = SubResource("LabelSettings_a3maa")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 117.0
+offset_right = 446.0
+offset_bottom = 207.0
+text = "Equipo Creativo
+
+Programadores
+
+Diseños de Personaje"
+label_settings = SubResource("LabelSettings_er0rp")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 561.0
+offset_top = 117.0
+offset_right = 1020.0
+offset_bottom = 145.0
+text = "Nicolas Vasquez Molina (Ex Juanin Ninja Bonito)"
+label_settings = SubResource("LabelSettings_giadf")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 648.0
+offset_top = 180.0
+offset_right = 919.0
+offset_bottom = 208.0
+text = "Fabian, Rocío, Enzo y Nicolas"
+label_settings = SubResource("LabelSettings_giadf")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 650.0
+offset_top = 240.0
+offset_right = 806.0
+offset_bottom = 268.0
+rotation = 0.00331032
+text = "Nicolas Vasquez
+"
+label_settings = SubResource("LabelSettings_16cwo")
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 300.0
+offset_right = 419.0
+offset_bottom = 328.0
+text = "Backgrounds
+"
+label_settings = SubResource("LabelSettings_stjyh")
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 600.0
+offset_top = 300.0
+offset_right = 1200.0
+offset_bottom = 328.0
+text = "https://free-game-assets.itch.io/"
+label_settings = SubResource("LabelSettings_vbjl3")
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 350.0
+offset_right = 350.0
+offset_bottom = 378.0
+text = "Music
+"
+label_settings = SubResource("LabelSettings_c2cc8")
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 700.0
+offset_top = 350.0
+offset_right = 835.0
+offset_bottom = 378.0
+text = "punishedFelix"
+label_settings = SubResource("LabelSettings_sifip")
+
+[node name="Label10" type="Label" parent="."]
+offset_left = 600.0
+offset_top = 400.0
+offset_right = 836.0
+offset_bottom = 423.0
+text = "https://ggbot.itch.io/kaph-font"
+label_settings = SubResource("LabelSettings_uyoi8")
+
+[node name="Label11" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 400.0
+offset_right = 347.0
+offset_bottom = 428.0
+text = "Fonts
+"
+label_settings = SubResource("LabelSettings_fth37")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

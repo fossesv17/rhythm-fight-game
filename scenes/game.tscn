@@ -13,6 +13,7 @@
 size = Vector2(3440, 103)
 
 [node name="Game" type="Node2D"]
+process_mode = 3
 position = Vector2(386, 463)
 script = ExtResource("1_0pp25")
 
@@ -45,15 +46,18 @@ position = Vector2(389, 143)
 position = Vector2(517, 143)
 
 [node name="BeatArea" parent="." instance=ExtResource("4_pwwsy")]
+
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(200, -215)
 
 [node name="Bee" parent="." instance=ExtResource("2_dbqo5")]
+process_mode = 1
 position = Vector2(11, 60)
 collision_layer = 2
 collision_mask = 5
 
 [node name="Bee2" parent="." instance=ExtResource("2_dbqo5")]
+process_mode = 1
 position = Vector2(377, 60)
 collision_layer = 4
 collision_mask = 3
