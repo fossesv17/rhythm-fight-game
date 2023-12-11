@@ -61,3 +61,5 @@ func _process(_delta):
 	else:
 		if !animation.is_playing():
 			animation.play("idle")	
+			
+

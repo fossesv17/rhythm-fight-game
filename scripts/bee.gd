@@ -58,3 +58,5 @@ func _process(_delta):
 	else:
 		if !animation.is_playing():
 			animation.play("idle")	
+
+ # Replace with function body.
