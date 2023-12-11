@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dp6naqnsnuwff" path="res://sprites/game assets/target_zone2.png" id="3_1y62o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqvj0"]
-size = Vector2(255, 236.803)
+size = Vector2(255, 380.377)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ev3sb"]
 animations = [{
@@ -34,26 +34,36 @@ height = 507.943
 script = ExtResource("1_tqbvw")
 
 [node name="Area" type="Sprite2D" parent="."]
+position = Vector2(0, -41.5)
+scale = Vector2(1, 1.58984)
 texture = ExtResource("1_amtol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -42)
 scale = Vector2(1, 1.07262)
 shape = SubResource("RectangleShape2D_hqvj0")
 disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 75)
+position = Vector2(1, 105)
 scale = Vector2(0.49292, 0.449219)
 sprite_frames = SubResource("SpriteFrames_ev3sb")
 
 [node name="Good_Zone" type="Area2D" parent="AnimatedSprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Good_Zone"]
+position = Vector2(-1.04785, -1.93338)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_pfou0")
 
 [node name="Perfect_Zone" type="Area2D" parent="AnimatedSprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Perfect_Zone"]
+position = Vector2(0.0128784, -0.113464)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_hycyv")
+
+[connection signal="area_entered" from="AnimatedSprite2D/Good_Zone" to="." method="_on_enter_good_zone"]
+[connection signal="area_exited" from="AnimatedSprite2D/Good_Zone" to="." method="_on_exit_good_zone"]
+[connection signal="area_entered" from="AnimatedSprite2D/Perfect_Zone" to="." method="_on_enter_perfect_zone"]
+[connection signal="area_exited" from="AnimatedSprite2D/Perfect_Zone" to="." method="_on_exit_perfect_zone"]

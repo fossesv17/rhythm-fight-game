@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwvxkf4phlye1"]
+[gd_scene load_steps=10 format=3 uid="uid://d1s5enve35bnh"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_0pp25"]
 [ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
 [ext_resource type="PackedScene" uid="uid://b3y1c8dtgmkav" path="res://scenes/floor.tscn" id="1_qotjj"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="2_26a8q"]
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
-[ext_resource type="PackedScene" uid="uid://c0hwkjgkbc4fl" path="res://scenes/song_player.tscn" id="3_6plf2"]
 [ext_resource type="PackedScene" uid="uid://gxkrpxa1dh8w" path="res://scenes/beat_area.tscn" id="4_pwwsy"]
-[ext_resource type="AudioStream" uid="uid://bxuen6k62vfgg" path="res://sound/HoliznaCC0 - Mutant Club.mp3" id="6_j4scs"]
 [ext_resource type="Script" path="res://scripts/bee2.gd" id="8_1l3y4"]
 [ext_resource type="Script" path="res://scenes/AreaCaida.gd" id="9_c3lg5"]
 
@@ -17,6 +16,13 @@ size = Vector2(3440, 103)
 process_mode = 3
 position = Vector2(386, 463)
 script = ExtResource("1_0pp25")
+
+[node name="MidiBar" parent="." instance=ExtResource("2_26a8q")]
+file = "res://sound/notesMidi.mid"
+
+[node name="MidiPlayer" parent="." instance=ExtResource("2_26a8q")]
+file = "res://sound/trackMidi.mid"
+soundfont = "res://sound/SoundFont.sf2"
 
 [node name="Background" parent="." instance=ExtResource("1_fndcf")]
 position = Vector2(181, -481)
@@ -40,13 +46,9 @@ position = Vector2(389, 143)
 position = Vector2(517, 143)
 
 [node name="BeatArea" parent="." instance=ExtResource("4_pwwsy")]
-position = Vector2(180, -270)
 
-[node name="SongPlayer" parent="." instance=ExtResource("3_6plf2")]
-process_mode = 1
-position = Vector2(155, -65)
-stream = ExtResource("6_j4scs")
-bpm = 100
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(200, -215)
 
 [node name="Bee" parent="." instance=ExtResource("2_dbqo5")]
 process_mode = 1
@@ -69,5 +71,7 @@ script = ExtResource("9_c3lg5")
 position = Vector2(204, 308)
 shape = SubResource("RectangleShape2D_21oay")
 
-[connection signal="measuresig" from="SongPlayer" to="." method="_on_measure_sig"]
+[connection signal="midi_event" from="MidiBar" to="." method="_on_midi_player_midi_event"]
+[connection signal="movebybeat" from="BeatArea" to="Bee" method="input_proc"]
+[connection signal="movebybeat" from="BeatArea" to="Bee2" method="input_proc"]
 [connection signal="body_entered" from="AreaCaida" to="AreaCaida" method="_on_body_entered"]

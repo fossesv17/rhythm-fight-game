@@ -1,8 +1,8 @@
 extends Area2D
 
-var INIT_Y = -360
-var INIT_X = 181
-var TARGET_Y = -170
+var INIT_Y = -400
+var INIT_X = 200
+var TARGET_Y = -90
 var dist_to_target_area = abs(TARGET_Y - INIT_Y)
 
 
@@ -10,7 +10,7 @@ var speed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position = Vector2(INIT_X, INIT_Y)
-	speed = dist_to_target_area / 2.0
+	speed = dist_to_target_area / 1.7
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
