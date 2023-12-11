@@ -9,6 +9,7 @@ var sec_per_beat = 60.0 / bpm
 var beatbar = load("res://scenes/beat_bar.tscn")
 var instance
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$SongPlayer.play_with_offset(5) # Replace with function body.
@@ -23,6 +24,9 @@ func _on_measure_sig(_pos):
 	
 #muerte de uno de los jugadores
 func _process(_delta):
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = not get_tree().paused
+		$pause_menu.visible = not $pause_menu.visible
 	if $Bee.maxHealth == 0:
 		get_tree().change_scene_to_file("res://scenes/victoryPlayer2.tscn")
 	if $Bee2.maxHealth == 0:
