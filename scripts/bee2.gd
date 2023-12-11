@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #Set animation player
 @onready var animation = $AnimationPlayer
 #healthbar
-var maxHealth = 100
+var health = 100
 
 func _physics_process(delta):
 #	# Add the gravity.
@@ -71,7 +71,7 @@ func _process(_delta):
 			
 			
 func take_damage():
-	maxHealth = maxHealth-10
+	health = health-10
 	
 func _on_hurtbox_area_entered(hitbox):
 	take_damage()

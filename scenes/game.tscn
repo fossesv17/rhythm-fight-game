@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1s5enve35bnh"]
+[gd_scene load_steps=11 format=3 uid="uid://d1s5enve35bnh"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_0pp25"]
 [ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="2_26a8q"]
 [ext_resource type="PackedScene" uid="uid://pwoqkhv1hq5i" path="res://scenes/bee.tscn" id="2_dbqo5"]
 [ext_resource type="PackedScene" uid="uid://gxkrpxa1dh8w" path="res://scenes/beat_area.tscn" id="4_pwwsy"]
+[ext_resource type="PackedScene" uid="uid://dn8vqeaod4iyl" path="res://scenes/pause_menu_folder/pause_menu.tscn" id="4_t33s0"]
 [ext_resource type="Script" path="res://scripts/bee2.gd" id="8_1l3y4"]
 [ext_resource type="Script" path="res://scenes/AreaCaida.gd" id="9_c3lg5"]
 
@@ -27,6 +28,8 @@ soundfont = "res://sound/SoundFont.sf2"
 [node name="Background" parent="." instance=ExtResource("1_fndcf")]
 position = Vector2(181, -481)
 
+[node name="Pause_menu" parent="Background" instance=ExtResource("4_t33s0")]
+
 [node name="Floor" parent="." instance=ExtResource("1_qotjj")]
 position = Vector2(5, 143)
 
@@ -46,7 +49,6 @@ position = Vector2(389, 143)
 position = Vector2(517, 143)
 
 [node name="BeatArea" parent="." instance=ExtResource("4_pwwsy")]
-
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(200, -215)
 

@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #Set animation player
 @onready var animation = $AnimationPlayer
-@export var maxHealth = 100
+@export var health = 100
 
 
 func _physics_process(delta):
@@ -68,7 +68,7 @@ func _process(_delta):
 
  # Replace with function body.
 func take_damage():
-	maxHealth = maxHealth-10
+	health = health-10
 
 func _on_hurtbox_area_entered(hitbox):
 	take_damage()

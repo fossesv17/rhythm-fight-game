@@ -349,10 +349,10 @@ position = Vector2(18, -42)
 shape = SubResource("RectangleShape2D_gbel3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_67ul2")
 }
-autoplay = "idle"
 
 [node name="hurtbox" type="Area2D" parent="."]
 collision_layer = 8
