@@ -17,7 +17,7 @@ position = Vector2(386, 463)
 script = ExtResource("1_0pp25")
 
 [node name="MidiBar" parent="." instance=ExtResource("2_26a8q")]
-file = "res://sound/deftrack.mid"
+file = "res://sound/notesMidi.mid"
 
 [node name="MidiPlayer" parent="." instance=ExtResource("2_26a8q")]
 file = "res://sound/trackMidi.mid"
