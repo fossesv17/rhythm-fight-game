@@ -23,9 +23,9 @@ func _physics_process(delta):
 		get_tree().paused = not get_tree().paused
 		pause_menu.visible = not pause_menu.visible
 			
-	if $Bee.maxHealth == 0:
+	if $Bee.health == 0:
 		get_tree().change_scene_to_file("res://scenes/victoryPlayer2.tscn")
-	if $Bee2.maxHealth == 0:
+	if $Bee2.health == 0:
 		get_tree().change_scene_to_file("res://scenes/victoryPlayer1.tscn")
 	
 func _on_midi_player_midi_event(channel, event):
