@@ -8,7 +8,8 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #Set animation player
 @onready var animation = $AnimationPlayer
-
+#healthbar
+var maxHealth = 100
 
 
 func _physics_process(delta):
@@ -33,7 +34,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(_delta):
-	$BeeSprite2.flip_h = true
 	var right = Input.is_action_pressed("p2_right")
 	var left = Input.is_action_pressed("p2_left")
 	var atack = Input.is_action_just_pressed("p2_atack")
@@ -43,17 +43,17 @@ func _process(_delta):
 	elif !is_on_floor():
 		animation.play("jump")
 		if right:
-			$BeeSprite2.flip_h = false
+			$BeeSprite2.scale.x = 1
 		if left:
-			$BeeSprite2.flip_h = true
+			$BeeSprite2.scale.x = -1
 	elif right:
-		$BeeSprite2.flip_h = false
+		$BeeSprite2.scale.x = 1
 		if jump: 
 			animation.play("jump")
 		if is_on_floor():
 			animation.play("walk")
 	elif left: 	
-		$BeeSprite2.flip_h = true
+		$BeeSprite2.scale.x = -1
 		if jump: 
 			animation.play("jump")
 		if is_on_floor():
@@ -62,4 +62,9 @@ func _process(_delta):
 		if !animation.is_playing():
 			animation.play("idle")	
 			
-
+			
+func take_damage():
+	maxHealth = maxHealth-10
+	
+func _on_hurtbox_area_entered(hitbox):
+	take_damage()

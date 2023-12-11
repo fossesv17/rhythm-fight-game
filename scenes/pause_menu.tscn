@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwc27rphvx44i"]
+
+[ext_resource type="Texture2D" uid="uid://c0uc4mtikmfyk" path="res://sprites/enviroment/beehive_backg.png" id="1_vt4n2"]
+[ext_resource type="FontFile" uid="uid://bsrat8xbmhukr" path="res://assets/fonts/TrueType (.ttf)/Kaph-Regular.ttf" id="2_omo83"]
+[ext_resource type="Texture2D" uid="uid://tgvsbhiqr2h0" path="res://sprites/menu assets/start_btn2.png" id="3_6ivww"]
+[ext_resource type="Texture2D" uid="uid://dn08egbo4w2b1" path="res://sprites/menu assets/start_btn3.png" id="4_ym1mv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nlfyk"]
+font = ExtResource("2_omo83")
+font_size = 30
+font_color = Color(0.517647, 0.329412, 0.360784, 1)
+outline_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctau2"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rp2nu"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahnp2"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BeehiveBackg" type="Sprite2D" parent="."]
+position = Vector2(195, 223)
+scale = Vector2(3.69333, 3.69333)
+texture = ExtResource("1_vt4n2")
+
+[node name="Label" type="Label" parent="BeehiveBackg"]
+offset_left = -35.1986
+offset_top = 61.7329
+offset_right = 110.801
+offset_bottom = 97.7329
+text = "Paused"
+label_settings = SubResource("LabelSettings_nlfyk")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_left = 812.0
+offset_top = 176.0
+offset_right = 908.0
+offset_bottom = 280.0
+scale = Vector2(3, 3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ResumeBtn" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_6ivww")
+texture_pressed = ExtResource("4_ym1mv")
+texture_hover = ExtResource("4_ym1mv")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/ResumeBtn"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 4.0
+offset_right = 80.0
+offset_bottom = 27.0
+text = "Resume"
+label_settings = SubResource("LabelSettings_ctau2")
+
+[node name="MenuBtn" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_6ivww")
+texture_pressed = ExtResource("4_ym1mv")
+texture_hover = ExtResource("4_ym1mv")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/MenuBtn"]
+layout_mode = 0
+offset_left = 4.66667
+offset_top = 2.66667
+offset_right = 92.6667
+offset_bottom = 25.6667
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_rp2nu")
+
+[node name="QuitBtn" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_6ivww")
+texture_pressed = ExtResource("4_ym1mv")
+texture_hover = ExtResource("4_ym1mv")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/QuitBtn"]
+layout_mode = 0
+offset_left = 30.6667
+offset_top = 3.33333
+offset_right = 70.6667
+offset_bottom = 26.3333
+text = "Quit"
+label_settings = SubResource("LabelSettings_ahnp2")

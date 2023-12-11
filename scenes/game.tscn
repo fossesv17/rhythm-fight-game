@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwvxkf4phlye1"]
+[gd_scene load_steps=12 format=3 uid="uid://bwvxkf4phlye1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_0pp25"]
 [ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bxuen6k62vfgg" path="res://sound/HoliznaCC0 - Mutant Club.mp3" id="6_j4scs"]
 [ext_resource type="Script" path="res://scripts/bee2.gd" id="8_1l3y4"]
 [ext_resource type="Script" path="res://scenes/AreaCaida.gd" id="9_c3lg5"]
+[ext_resource type="PackedScene" uid="uid://ced8413klbaj4" path="res://scenes/gui.tscn" id="10_lmcrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21oay"]
 size = Vector2(3440, 103)
@@ -64,6 +65,8 @@ script = ExtResource("9_c3lg5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaCaida"]
 position = Vector2(204, 308)
 shape = SubResource("RectangleShape2D_21oay")
+
+[node name="GUI" parent="." instance=ExtResource("10_lmcrk")]
 
 [connection signal="measuresig" from="SongPlayer" to="." method="_on_measure_sig"]
 [connection signal="body_entered" from="AreaCaida" to="AreaCaida" method="_on_body_entered"]

@@ -21,4 +21,10 @@ func _spawn_beatbar():
 func _on_measure_sig(_pos):
 	_spawn_beatbar()
 	
-
+#muerte de uno de los jugadores
+func _process(_delta):
+	if $Bee.maxHealth == 0:
+		get_tree().change_scene_to_file("res://scenes/victoryPlayer2.tscn")
+	if $Bee2.maxHealth == 0:
+		get_tree().change_scene_to_file("res://scenes/victoryPlayer1.tscn")
+		

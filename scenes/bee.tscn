@@ -1,16 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://pwoqkhv1hq5i"]
+[gd_scene load_steps=15 format=3 uid="uid://pwoqkhv1hq5i"]
 
 [ext_resource type="Script" path="res://scripts/bee.gd" id="1_rya5u"]
-[ext_resource type="Texture2D" path="res://sprites/bee/Abeja_idle_1.png" id="2_y3qia"]
-[ext_resource type="Texture2D" path="res://sprites/bee/Abeja_caminar.png" id="3_6e6qt"]
-[ext_resource type="Texture2D" path="res://sprites/bee/Abeja_saltar.png" id="4_k5mml"]
-[ext_resource type="Texture2D" path="res://sprites/bee/Abeja_golpe.png" id="5_g16k2"]
+[ext_resource type="Texture2D" uid="uid://8and6w4hkcg2" path="res://sprites/bee/Abeja_idle_1.png" id="2_y3qia"]
+[ext_resource type="Texture2D" uid="uid://difragvuj7jpq" path="res://sprites/bee/Abeja_caminar.png" id="3_6e6qt"]
+[ext_resource type="Texture2D" uid="uid://b5nblx8t2s7jc" path="res://sprites/bee/Abeja_saltar.png" id="4_k5mml"]
+[ext_resource type="Texture2D" uid="uid://mth7ks15trj8" path="res://sprites/bee/Abeja_golpe.png" id="5_g16k2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7fot"]
 radius = 17.0924
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbel3"]
-size = Vector2(64, 122.75)
+size = Vector2(76, 122.75)
 
 [sub_resource type="Animation" id="Animation_vv0eo"]
 length = 0.45
@@ -321,6 +321,10 @@ _data = {
 "walk": SubResource("Animation_32j8p")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ey27q"]
+radius = 33.0
+height = 102.0
+
 [node name="Bee" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -328,7 +332,6 @@ script = ExtResource("1_rya5u")
 
 [node name="BeeSprite2" type="Sprite2D" parent="."]
 position = Vector2(1, -45)
-scale = Vector2(0.936091, 0.936091)
 texture = ExtResource("2_y3qia")
 hframes = 10
 
@@ -342,7 +345,7 @@ shape = SubResource("CircleShape2D_v7fot")
 disabled = true
 
 [node name="physics" type="CollisionShape2D" parent="."]
-position = Vector2(12, -42)
+position = Vector2(18, -42)
 shape = SubResource("RectangleShape2D_gbel3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -351,4 +354,14 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(12, -54)
+shape = SubResource("CapsuleShape2D_ey27q")
+debug_color = Color(0.815686, 0.403922, 0.2, 0.419608)
+
 [connection signal="area_entered" from="BeeSprite2/hitbox" to="." method="_on_punch_hitbox_area_entered"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
