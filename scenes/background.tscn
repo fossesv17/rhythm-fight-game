@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dow5n5papbw3f"]
+[gd_scene load_steps=6 format=3 uid="uid://dow5n5papbw3f"]
 
-[ext_resource type="Texture2D" uid="uid://dqhbmcfmnplc1" path="res://sprites/enviroment/Clouds/Clouds 1/1.png" id="1_qlo32"]
-[ext_resource type="Texture2D" uid="uid://iglpvc5kw8wu" path="res://sprites/enviroment/Clouds/Clouds 1/2.png" id="2_83frk"]
-[ext_resource type="Texture2D" uid="uid://lat20c5cftob" path="res://sprites/enviroment/Clouds/Clouds 1/3.png" id="3_v4080"]
-[ext_resource type="Texture2D" uid="uid://hiirhkbn8cs0" path="res://sprites/enviroment/Clouds/Clouds 1/4.png" id="4_lwnge"]
+[ext_resource type="Texture2D" uid="uid://dqhbmcfmnplc1" path="res://sprites/enviroment/Clouds/Clouds 1/1.png" id="1_at7ae"]
+[ext_resource type="Texture2D" uid="uid://iglpvc5kw8wu" path="res://sprites/enviroment/Clouds/Clouds 1/2.png" id="2_wu8io"]
+[ext_resource type="Texture2D" uid="uid://lat20c5cftob" path="res://sprites/enviroment/Clouds/Clouds 1/3.png" id="3_bk3ve"]
+[ext_resource type="Texture2D" uid="uid://hiirhkbn8cs0" path="res://sprites/enviroment/Clouds/Clouds 1/4.png" id="4_cogqp"]
+[ext_resource type="PackedScene" uid="uid://dn8vqeaod4iyl" path="res://scenes/pause_menu_folder/pause_menu.tscn" id="5_8ikr7"]
 
 [node name="Background" type="Node2D"]
 position = Vector2(585, -244)
@@ -12,19 +13,23 @@ scale = Vector2(2, 2)
 [node name="1" type="Sprite2D" parent="."]
 position = Vector2(-273.5, 223.5)
 scale = Vector2(2, 2)
-texture = ExtResource("1_qlo32")
+texture = ExtResource("1_at7ae")
 
 [node name="2" type="Sprite2D" parent="."]
 position = Vector2(-273.5, 223.5)
 scale = Vector2(2, 2)
-texture = ExtResource("2_83frk")
+texture = ExtResource("2_wu8io")
 
 [node name="3" type="Sprite2D" parent="."]
 position = Vector2(-273.5, 223.5)
 scale = Vector2(2, 2)
-texture = ExtResource("3_v4080")
+texture = ExtResource("3_bk3ve")
 
 [node name="4" type="Sprite2D" parent="."]
 position = Vector2(-273.5, 223.5)
 scale = Vector2(2, 2)
-texture = ExtResource("4_lwnge")
+texture = ExtResource("4_cogqp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("5_8ikr7")]
