@@ -19,7 +19,9 @@ func _physics_process(delta):
 		midi_player.play_speed = 0.7
 	
 func _on_midi_player_midi_event(channel, event):
-	if channel.number == 1 and event.type == 144:
+	if channel.number == 0 and event.type == 144:
+		_spawn_beatbar()
+	elif midi_bar.position > 61205 and channel.number == 1 and event.type == 128:
 		_spawn_beatbar()
 		
 func _spawn_beatbar():

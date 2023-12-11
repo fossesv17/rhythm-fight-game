@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 150.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
 
@@ -10,33 +10,21 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animation = $AnimationPlayer
 
 
-
-#func _physics_process(delta):
+func _physics_process(delta):
 #	# Add the gravity.
-#	if not is_on_floor():
-#		velocity.y += gravity * delta
-#
-#	# Handle Jump.
-#	if Input.is_action_just_pressed("p2_jump")and is_on_floor():
-#		velocity.y = JUMP_VELOCITY
-#	# Get the input direction and handle the movement/deceleration.
-#	# As good practice, you should replace UI actions with custom gameplay actions.
-#	var directionx = Input.get_axis("p2_left", "p2_right")
-#	var directiony = Input.get_axis("p2_up", "p2_down")
-#	if directionx:
-#		velocity.x = directionx * SPEED
-#	elif directiony:
-#		velocity.y = directiony * SPEED
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, SPEED)
-#
-#	move_and_slide()
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	
+	if velocity.x > 0:
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+	elif velocity.x < 0:
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+	else:
+		velocity.x = 0
+		
+	move_and_slide()
 	
 func input_proc():
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity
-
 	# Handle Jump.
 	if Input.is_action_just_pressed("p2_jump")and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -48,8 +36,6 @@ func input_proc():
 		velocity.x = directionx * SPEED
 	elif directiony:
 		velocity.y = directiony * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 

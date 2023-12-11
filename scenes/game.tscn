@@ -17,7 +17,7 @@ position = Vector2(386, 463)
 script = ExtResource("1_0pp25")
 
 [node name="MidiBar" parent="." instance=ExtResource("2_26a8q")]
-file = "res://sound/notesMidi.mid"
+file = "res://sound/deftrack.mid"
 
 [node name="MidiPlayer" parent="." instance=ExtResource("2_26a8q")]
 file = "res://sound/trackMidi.mid"
@@ -69,5 +69,5 @@ shape = SubResource("RectangleShape2D_21oay")
 
 [connection signal="midi_event" from="MidiBar" to="." method="_on_midi_player_midi_event"]
 [connection signal="movebybeat" from="BeatArea" to="Bee" method="input_proc"]
-[connection signal="movebybeat" from="BeatArea" to="Bee" method="_physics_process"]
+[connection signal="movebybeat" from="BeatArea" to="Bee2" method="input_proc"]
 [connection signal="body_entered" from="AreaCaida" to="AreaCaida" method="_on_body_entered"]
