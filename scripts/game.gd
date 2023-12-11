@@ -12,12 +12,17 @@ func _ready():
 	midi_bar.play_speed = 0.7
 	midi_bar.play()
 	midi_bar.volume_db = 0
+	$ProgressBarL.value = 100
+	$ProgressBarR.value = 100
 	
 func _physics_process(delta):
 	delta_sum += delta
 	if 1.4 <= delta_sum and not midi_player.playing:
 		midi_player.play()
 		midi_player.play_speed = 0.7
+		
+	$ProgressBarL.value = $Bee.health
+	$ProgressBarR.value = $Bee2.health
 	
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = not get_tree().paused

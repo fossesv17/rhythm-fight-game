@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1s5enve35bnh"]
+[gd_scene load_steps=13 format=3 uid="uid://d1s5enve35bnh"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_0pp25"]
 [ext_resource type="PackedScene" uid="uid://dow5n5papbw3f" path="res://scenes/background.tscn" id="1_fndcf"]
@@ -12,6 +12,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21oay"]
 size = Vector2(3440, 103)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4twtp"]
+bg_color = Color(0, 0.72549, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0g4m"]
+bg_color = Color(0, 0.72549, 0, 1)
 
 [node name="Game" type="Node2D"]
 process_mode = 3
@@ -72,6 +78,24 @@ script = ExtResource("9_c3lg5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaCaida"]
 position = Vector2(204, 308)
 shape = SubResource("RectangleShape2D_21oay")
+
+[node name="ProgressBarL" type="ProgressBar" parent="."]
+offset_left = -354.0
+offset_top = -427.0
+offset_right = -18.0
+offset_bottom = -400.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_4twtp")
+step = 1.0
+show_percentage = false
+
+[node name="ProgressBarR" type="ProgressBar" parent="."]
+offset_left = 392.0
+offset_top = -430.0
+offset_right = 727.0
+offset_bottom = -403.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_t0g4m")
+step = 1.0
+show_percentage = false
 
 [connection signal="midi_event" from="MidiBar" to="." method="_on_midi_player_midi_event"]
 [connection signal="movebybeat" from="BeatArea" to="Bee" method="input_proc"]
